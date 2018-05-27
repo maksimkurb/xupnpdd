@@ -29,7 +29,7 @@ RUN \
   sed -i "s|cfg.daemon=false|cfg.daemon=true|g" "/etc/xupnpd/xupnpd.lua" && \
 # cleanup
  rm -rf \
-	/var/tmp/xupnpd && \
+	/var/tmp/xupnpd 
    
 # add local files
 COPY root/ /
