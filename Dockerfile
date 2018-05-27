@@ -1,4 +1,4 @@
-FROM lsiobase/alpine
+FROM alpine
 
 # install packages and symlink libs
 RUN \
@@ -7,11 +7,11 @@ RUN \
   build-base \
   git \
   psmisc \
-  openssl-dev \
   util-linux-dev && \
  echo "**** install runtime packages ****" && \
   apk add --no-cache \
   mc \
+  openssl-dev \
   nano \
   htop  && \
  echo "**** Clone and compile xupnpd source code ****" && \
@@ -24,12 +24,12 @@ RUN \
   mv /var/tmp/xupnpd/src/* /etc/xupnpd && \
   sed -i "s|interface='lo'|interface='br0'|g" "/etc/xupnpd/xupnpd.lua" && \
   sed -i "s|cfg.daemon=false|cfg.daemon=true|g" "/etc/xupnpd/xupnpd.lua" && \
-# cleanup
+ echo "**** clean up ****" && \
+ apk del --purge \
+	build-dependencies && \
  rm -rf \
 	/var/tmp/xupnpd 
-   
-# add local files
-COPY root/ /
 
 # ports and volumes
 EXPOSE 4044
+CMD ["/etc/xupnpd/xupnpd"]
