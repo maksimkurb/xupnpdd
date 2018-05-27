@@ -17,3 +17,5 @@ You can watch HDTV broadcasts (multicast or unicast) and listen Internet Radio i
     * Parent control (Access Control List)
     * Web-based user interface
     * LUA scripting  
+    
+   gggg
