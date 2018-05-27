@@ -18,3 +18,6 @@ You can watch HDTV broadcasts (multicast or unicast) and listen Internet Radio i
     * Web-based user interface
     * LUA scripting  
     
+ * Modifications for Docker-friendliness.
+ * Administration tools that are especially useful in the context of Docker.
+ * Mechanisms for easily running multiple processes, [without violating the Docker philosophy](#docker_single_process).
