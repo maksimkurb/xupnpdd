@@ -11,6 +11,7 @@ RUN \
  echo "**** install runtime packages ****" && \
   apk add --no-cache \
   mc \
+  bash \
   openssl-dev \
   nano \
   htop  && \
@@ -32,4 +33,7 @@ RUN \
 
 # ports and volumes
 EXPOSE 4044
-CMD ["/etc/xupnpd/xupnpd"]
+COPY entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
