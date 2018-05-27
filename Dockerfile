@@ -19,9 +19,6 @@ RUN \
   git clone https://github.com/clark15b/xupnpd.git && \
   cd xupnpd/src && \
   make && \
- echo "**** clean up ****" && \
-  apk del --purge \
-	build-dependencies && \
   mkdir -p \
 	/etc/xupnpd && \
   mv /var/tmp/xupnpd/src/* /etc/xupnpd && \
