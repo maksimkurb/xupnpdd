@@ -8,12 +8,12 @@ You can watch HDTV broadcasts (multicast or unicast) and listen Internet Radio i
 
 # Features
 
-    *Builtin DLNA/UPnP media server for sharing local media files and external IPTV/Radio streams
-    *Builtin DLNA/UPnP media server for sharing local media files and external IPTV/Radio streams
-    *Builtin multicast proxy for MPEG-TS streams
-    *YouTube, Vimeo and GameTrailers plugins (HD)
-    *No transcoding
-    *HDTV ready
-    *Parent control (Access Control List)
-    *Web-based user interface
-    *LUA scripting  
+    * Builtin DLNA/UPnP media server for sharing local media files and external IPTV/Radio streams
+    * Builtin DLNA/UPnP media server for sharing local media files and external IPTV/Radio streams
+    * Builtin multicast proxy for MPEG-TS streams
+    * YouTube, Vimeo and GameTrailers plugins (HD)
+    * No transcoding
+    * HDTV ready
+    * Parent control (Access Control List)
+    * Web-based user interface
+    * LUA scripting  
