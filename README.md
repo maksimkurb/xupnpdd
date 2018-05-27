@@ -6,9 +6,9 @@ The program shares UTF8-encoded M3U playlists with links over local area network
 
 You can watch HDTV broadcasts (multicast or unicast) and listen Internet Radio in IP network without transcoding and PC. 
 
-# Features
+### Features
 
-    *  Builtin DLNA/UPnP media server for sharing local media files and external IPTV/Radio streams
+    * Builtin DLNA/UPnP media server for sharing local media files and external IPTV/Radio streams
     * Builtin DLNA/UPnP media server for sharing local media files and external IPTV/Radio streams
     * Builtin multicast proxy for MPEG-TS streams
     * YouTube, Vimeo and GameTrailers plugins (HD)
