@@ -27,7 +27,7 @@ RUN \
   sed -i "s|cfg.daemon=false|cfg.daemon=true|g" "/etc/xupnpd/xupnpd.lua" && \
  echo "**** clean up ****" && \
  apk del --purge \
-	build-dependencies && \
+	git && \
  rm -rf \
 	/var/tmp/xupnpd 
 
