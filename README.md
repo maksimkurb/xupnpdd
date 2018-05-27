@@ -18,4 +18,3 @@ You can watch HDTV broadcasts (multicast or unicast) and listen Internet Radio i
     * Web-based user interface
     * LUA scripting  
     
-   gggg
