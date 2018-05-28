@@ -7,9 +7,7 @@ FROM lsiobase/alpine
   git \
   psmisc \
   openssl-dev \
-  util-linux-dev && \
- echo "**** install runtime packages ****" && \
-  apk add --no-cache \
+  util-linux-dev \
   mc \
   nano \
   htop  && \
@@ -24,6 +22,7 @@ FROM lsiobase/alpine
   sed -i "s|interface='lo'|interface='br0'|g" "/etc/xupnpd/xupnpd.lua" && \
   sed -i "s|cfg.daemon=false|cfg.daemon=true|g" "/etc/xupnpd/xupnpd.lua" && \
 # cleanup
-rm -rf \ /var/tmp/xupnpd # add local files COPY root/ /
+  rm -rf \ 
+  /var/tmp/xupnpd 
 # ports and volumes 
 EXPOSE 4044
