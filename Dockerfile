@@ -1,8 +1,9 @@
 FROM lsiobase/alpine 
 
-# install packages and symlink libs RUN \
+# install packages and symlink libs 
+RUN \
  echo "**** install build packages ****" && \
- apk add --no-cache --virtual=build-dependencies \
+  apk add --no-cache --virtual=build-dependencies \
   build-base \
   git \
   psmisc \
