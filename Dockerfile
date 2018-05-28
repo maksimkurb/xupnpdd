@@ -4,7 +4,7 @@ FROM alpine
 RUN \
  echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
-  build-base \
+  alpine-sdk \
   git \
   psmisc \
   util-linux-dev && \
