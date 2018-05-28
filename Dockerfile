@@ -1,39 +1,15 @@
-FROM alpine
+FROM alpine:latest
 
-# install packages and symlink libs
-RUN \
- echo "**** install build packages ****" && \
- apk add --no-cache --virtual=build-dependencies \
-  alpine-sdk \
-  git \
-  psmisc \
-  util-linux-dev && \
- echo "**** install runtime packages ****" && \
-  apk add --no-cache \
-  mc \
-  bash \
-  openssl-dev \
-  nano \
-  htop  && \
- echo "**** Clone and compile xupnpd source code ****" && \
-  cd /var/tmp && \
-  git clone https://github.com/clark15b/xupnpd.git && \
-  cd xupnpd/src && \
-  make && \
-  mkdir -p \
-	/etc/xupnpd && \
-  mv /var/tmp/xupnpd/src/* /etc/xupnpd && \
-  sed -i "s|interface='lo'|interface='br0'|g" "/etc/xupnpd/xupnpd.lua" && \
-  sed -i "s|cfg.daemon=false|cfg.daemon=true|g" "/etc/xupnpd/xupnpd.lua" && \
- echo "**** clean up ****" && \
- apk del --purge \
-	git && \
- rm -rf \
-	/var/tmp/xupnpd 
+# Install packages
+RUN apk --no-cache add bash git alpine-sdk util-linux-dev openssl-dev mc
+RUN git clone https://github.com/clark15b/xupnpd.git
+WORKDIR "/xupnpd/src/"
+RUN make
+RUN sed -i "s|interface='lo'|interface='br0'|g" "/etc/xupnpd/xupnpd.lua" 
+RUN sed -i "s|cfg.daemon=false|cfg.daemon=true|g" "/etc/xupnpd/xupnpd.lua" 
 
-# ports and volumes
+COPY entrypoint.sh /
+RUN chmod +x /entrypoint.sh
 EXPOSE 4044
-COPY start.sh /
-RUN chmod +x /start.sh
 
-CMD ["/start.sh"]
+ENTRYPOINT ["/entrypoint.sh"]
