@@ -1,4 +1,3 @@
 #!/usr/bin/with-contenv bash
-
 exec \
-s6-setuidgid abc /etc/xupnpd/xupnpd
+        s6-setuidgid abc /etc/xupnpd/xupnpd
