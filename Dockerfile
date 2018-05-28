@@ -1,6 +1,7 @@
 FROM lsiobase/alpine 
 
-# install packages and symlink libs 
+# install packages and symlink libs
+WORKDIR /var/tmp/
 RUN \
  echo "**** install build packages ****" && \
   apk add --no-cache --virtual=build-dependencies \
@@ -13,7 +14,6 @@ RUN \
   nano \
   htop  && \
  echo "**** Clone and compile xupnpd source code ****" && \
-  cd /var/tmp && \
   git clone https://github.com/clark15b/xupnpd.git && \
   cd xupnpd/src && \
   make && \
@@ -24,6 +24,8 @@ RUN \
   sed -i "s|cfg.daemon=false|cfg.daemon=true|g" "/etc/xupnpd/xupnpd.lua" && \
 # cleanup
   rm -rf \ 
-  /var/tmp/xupnpd 
+  /var/tmp/xupnpd
+WORKDIR / 
 # ports and volumes 
 EXPOSE 4044
+CMD ["/etc/xupnpd/xupnpd"]
