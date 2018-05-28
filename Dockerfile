@@ -25,7 +25,8 @@ RUN \
 # cleanup
   rm -rf \ 
   /var/tmp/xupnpd
+COPY root/ /
 WORKDIR / 
 # ports and volumes 
 EXPOSE 4044
-CMD ["/etc/xupnpd/xupnpd"]
+
