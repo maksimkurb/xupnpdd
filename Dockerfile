@@ -14,8 +14,8 @@ RUN \
   nano \
   htop  && \
  echo "**** Clone and compile xupnpd source code ****" && \
-  git clone https://github.com/clark15b/xupnpd.git && \
-  cd xupnpd/src && \
+  git clone https://github.com/sybdata/xupnpd-1.git && \
+  cd xupnpd-1/src && \
   make && \
   mkdir -p \
 	/etc/xupnpd && \
