@@ -7,6 +7,7 @@ RUN \
   apk add --no-cache --virtual=build-dependencies \
   build-base \
   git \
+  zlib-dev \
   psmisc \
   libssl1.0 \
   pkgconf \
