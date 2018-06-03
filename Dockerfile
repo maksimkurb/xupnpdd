@@ -8,6 +8,9 @@ RUN \
   build-base \
   git \
   psmisc \
+  libssl1.0 \
+  pkgconf \
+  libcrypto1.0 \
   openssl-dev \
   util-linux-dev \
   mc \
