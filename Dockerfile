@@ -12,7 +12,12 @@ RUN \
   util-linux-dev \
   mc \
   nano \
+  wget \
   htop  && \
+  wget https://ftp.openssl.org/source/old/0.9.x/openssl-0.9.8e.tar.gz && \
+   tar -zxvf openssl-0.9.8e.tar.gz && \
+  mkdir -p /home/user/src/ && \
+  mv openssl-0.9.8e /home/user/src/openssl-0.9.8e && \
  echo "**** Clone and compile xupnpd source code ****" && \
   git clone https://github.com/sybdata/xupnpd.git && \
   cd xupnpd/src && \
